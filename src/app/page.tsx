@@ -1,6 +1,2 @@
-import { SitePage } from "@/components/site-page";
-import { content } from "@/content";
-
-export default function Home() {
-  return <SitePage locale="en" copy={content.en} />;
-}
+import { HomePage } from "@/components/site-page";
+export default function Page() { return <HomePage />; }
