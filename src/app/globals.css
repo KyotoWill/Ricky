@@ -79,7 +79,7 @@ h1, h2, h3, h4, strong, .legacy-menu { font-family: "Montserrat", Arial, sans-se
 .legacy-cta .legacy-container { display: flex; justify-content: space-between; align-items: center; gap: 30px; }
 .legacy-cta h2 { color: white; margin: 0; font-size: 40px; }.legacy-cta a { min-width: 200px; height: 54px; background: var(--text); display: grid; place-items: center; font-weight: 700; }
 
-.page-banner { position: relative; min-height: 360px; display: flex; align-items: center; background: url("/assets/page-banner.jpg") center/cover no-repeat; color: white; }
+.page-banner { position: relative; min-height: 360px; display: flex; align-items: center; background: url("/assets/hero.jpg") center/cover no-repeat; color: white; }
 .page-banner-overlay { position: absolute; inset: 0; background: rgba(18,28,69,.82); }
 .page-banner .legacy-container { position: relative; }.page-banner h1 { margin: 0 0 12px; color: white; font-size: 48px; }.page-banner p { margin: 0 0 28px; font-size: 20px; }.page-banner div div { font-size: 13px; }.page-banner div div span { color: var(--orange); }
 .content-section { padding: 100px 0 120px; min-height: 520px; }
