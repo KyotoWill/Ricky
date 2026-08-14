@@ -78,6 +78,28 @@ function rewriteRoutes(markup: string, locale: OriginalLocale) {
   return markup;
 }
 
+function localizeHomepage(markup: string, locale: OriginalLocale) {
+  if (locale === "en") return markup;
+  const isSimplified = locale === "zh-cn";
+  const replacements: Array<[string, string]> = [
+    ["Who we are", isSimplified ? "关于我们" : "關於我們"],
+    [
+      "We keep things simple, putting you in control so you can make informed choices",
+      isSimplified ? "我们简化流程，让您掌控全局并作出明智选择" : "我們簡化流程，讓您掌控全局並作出明智選擇",
+    ],
+    ["what we do", isSimplified ? "我们的服务" : "我們的服務"],
+    ["Our Services", isSimplified ? "我们的服务" : "我們的服務"],
+    ["We work with you to achieve your goals", isSimplified ? "我们与您携手实现目标" : "我們與您攜手實現目標"],
+    ["THow we do", isSimplified ? "专业、高效、可靠" : "專業、高效、可靠"],
+    ["How we do", isSimplified ? "我们的工作方式" : "我們的工作方式"],
+    ["Our Approach", isSimplified ? "我们的方法" : "我們的方法"],
+    ["Contact us for help.", isSimplified ? "需要帮助？请联系我们。" : "需要協助？請聯絡我們。"],
+    ["Contact Us", isSimplified ? "联系我们" : "聯絡我們"],
+  ];
+  for (const [source, translated] of replacements) markup = markup.replaceAll(source, translated);
+  return markup;
+}
+
 export function getOriginalPageMarkup(locale: OriginalLocale, page: OriginalPageSlug | "home") {
   const pageFile = pageFiles[page];
   const filename = path.join(process.cwd(), "reference", "original", `${pageFile}-${locale}.html`);
@@ -100,11 +122,22 @@ export function getOriginalPageMarkup(locale: OriginalLocale, page: OriginalPage
     .replace(/action="https:\/\/(?:www\.)?anantalog\.com\/[^"]*"/gi, 'action="#" data-replica-form')
     .replaceAll("https://www.anantalog.com/assets/front/", "/original-assets/")
     .replaceAll("https://anantalog.com/assets/front/", "/original-assets/")
+    .replaceAll("https://www.anantalog.com/assets/", "/assets/")
+    .replaceAll("https://anantalog.com/assets/", "/assets/")
     .replaceAll("/original-assets/img/69e7a3997bc1b.png", "/assets/logo.jpg")
     .replaceAll("/original-assets/img/69e7a5dddf9a4.png", "/assets/logo.jpg")
-    .replace(/https:\/\/(?:www\.)?anantalog\.com\/changelanguage\/en/gi, "/en/")
-    .replace(/https:\/\/(?:www\.)?anantalog\.com\/changelanguage\/zh_hk/gi, "/")
-    .replace(/https:\/\/(?:www\.)?anantalog\.com\/changelanguage\/zh_cn/gi, "/zh-cn/");
+    .replace(
+      /https:\/\/(?:www\.)?anantalog\.com\/changelanguage\/en/gi,
+      page === "home" ? localeHome.en : withLocale("en", page),
+    )
+    .replace(
+      /https:\/\/(?:www\.)?anantalog\.com\/changelanguage\/zh_hk/gi,
+      page === "home" ? localeHome["zh-hk"] : withLocale("zh-hk", page),
+    )
+    .replace(
+      /https:\/\/(?:www\.)?anantalog\.com\/changelanguage\/zh_cn/gi,
+      page === "home" ? localeHome["zh-cn"] : withLocale("zh-cn", page),
+    );
 
   if (page === "services") {
     markup = markup
@@ -119,6 +152,8 @@ export function getOriginalPageMarkup(locale: OriginalLocale, page: OriginalPage
   } else {
     markup = markup.replaceAll("t.me/foxystresser", "Ananta International Logistics");
   }
+
+  if (page === "home") markup = localizeHomepage(markup, locale);
 
   markup = rewriteRoutes(markup, locale)
     .replace(/href="https:\/\/(?:www\.)?anantalog\.com\/login"/gi, `href="${localeHome[locale]}"`)

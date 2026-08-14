@@ -16,3 +16,8 @@ body {
   width: 238px;
   height: auto;
 }
+
+.original-site-shell img {
+  max-width: 100%;
+  height: auto;
+}

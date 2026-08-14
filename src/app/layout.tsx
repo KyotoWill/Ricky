@@ -24,7 +24,6 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
         <link rel="stylesheet" href="/original-assets/css/logistic-style.css" />
         <link rel="stylesheet" href="/original-assets/css/responsive.css" />
         <link rel="stylesheet" href="/original-assets/css/logistic-responsive.css" />
-        <link rel="stylesheet" href="/original-assets/css/logistic-base-color-orange.css" />
       </head>
       <body>{children}</body>
     </html>

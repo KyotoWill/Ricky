@@ -8,8 +8,9 @@ export function OriginalHome({ locale }: { locale: OriginalLocale }) {
 export function OriginalPage({ locale, page }: { locale: OriginalLocale; page: OriginalPageSlug | "home" }) {
   return (
     <>
+      <style>{`@import url("/original-assets/css/logistic-base-color-${locale === "en" ? "black" : "orange"}.css");`}</style>
       <div className="original-site-shell" dangerouslySetInnerHTML={{ __html: getOriginalPageMarkup(locale, page) }} />
-      <OriginalSiteScripts />
+      <OriginalSiteScripts locale={locale} />
     </>
   );
 }

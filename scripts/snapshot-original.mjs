@@ -115,26 +115,33 @@ function sanitizeSnapshot(html, page) {
 
 function assetUrls(text, base = `${origin}/`) {
   const urls = new Set();
-  const absolute = /https?:\/\/(?:www\.)?anantalog\.com\/assets\/front\/[^"'\s)]+/g;
+  const absolute = /https?:\/\/(?:www\.)?anantalog\.com\/assets\/[^"'\s)]+/g;
   for (const match of text.matchAll(absolute)) urls.add(match[0].replaceAll("&amp;", "&"));
+  const attributes = /(?:src|href)=(['"])([^'"]+)\1/g;
+  for (const match of text.matchAll(attributes)) {
+    const resolved = new URL(match[2], base).href;
+    if (resolved.startsWith(`${origin}/assets/`)) urls.add(resolved);
+  }
   const cssUrl = /url\((['"]?)([^'"\)]+)\1\)/g;
   for (const match of text.matchAll(cssUrl)) {
     if (match[2].startsWith("data:")) continue;
     const resolved = new URL(match[2], base).href;
-    if (resolved.startsWith(`${origin}/assets/front/`)) urls.add(resolved);
+    if (resolved.startsWith(`${origin}/assets/`)) urls.add(resolved);
   }
   return new Set([...urls].filter((url) => !/\/img\/69e7a(?:3997bc1b|5dddf9a4)\.png$/i.test(url)));
 }
 
 function localPath(url) {
   const parsed = new URL(url);
+  const decodedPathname = decodeURIComponent(parsed.pathname);
   let relative = parsed.pathname.replace(/^\/assets\/front\//, "");
   if (parsed.pathname.endsWith("logistic-base-color.php")) {
     relative = parsed.searchParams.get("color") === "000000"
       ? "css/logistic-base-color-black.css"
       : "css/logistic-base-color-orange.css";
   }
-  return path.join(assetDir, ...relative.split("/"));
+  if (parsed.pathname.startsWith("/assets/front/")) return path.join(assetDir, ...relative.split("/"));
+  return path.join(root, "public", ...decodedPathname.replace(/^\//, "").split("/"));
 }
 
 const pages = (await Promise.all([fetchLocale("en"), fetchLocale("zh_hk"), fetchLocale("zh_cn")])).flat();

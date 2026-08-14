@@ -17,8 +17,9 @@ const scripts = [
   "/original-assets/js/logistic-main.js",
 ];
 
-export function OriginalSiteScripts() {
+export function OriginalSiteScripts({ locale }: { locale: "en" | "zh-hk" | "zh-cn" }) {
   useEffect(() => {
+    document.documentElement.lang = locale === "en" ? "en" : locale === "zh-cn" ? "zh-CN" : "zh-Hant";
     window.mainbs = { is_announcement: 0, announcement_delay: "0" };
     window.rtl = 0;
     let cancelled = false;
@@ -46,7 +47,7 @@ export function OriginalSiteScripts() {
       cancelled = true;
       forms.forEach((form) => form.removeEventListener("submit", preventSubmit));
     };
-  }, []);
+  }, [locale]);
 
   return null;
 }
