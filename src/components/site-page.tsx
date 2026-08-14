@@ -1,16 +1,56 @@
 import type { ReactNode } from "react";
 import Link from "next/link";
 
-const services = [
-  { title: "海運", desc: "海運", icon: "/assets/service-sea.png" },
-  { title: "空運", desc: "空運", icon: "/assets/service-air.png" },
-  { title: "報關", desc: "報關", icon: "/assets/service-customs.png" },
-  { title: "倉庫服務", desc: "倉庫服務", icon: "/assets/service-warehouse.png" },
-  { title: "陸路運輸", desc: "卡車運輸", icon: "/assets/service-road.png" },
-  { title: "跨邊境運輸", desc: "跨邊境運輸", icon: "/assets/service-border.png" },
-];
+type Language = "traditional" | "simplified" | "english";
 
-export function Header() {
+const serviceIcons = ["sea", "air", "customs", "warehouse", "road", "border"];
+
+const copy = {
+  english: {
+    language: "English",
+    nav: ["About Us", "Services", "Logistic Information", "Our offices", "Contact us", "Join Us"],
+    login: "Login", quote: "Get Quote",
+    serviceNames: ["SEA FREIGHT SERVICES", "AIR FREIGHT SERVICES", "Customs Declaration", "Warehousing Services", "Land transport", "Cross border transportation"],
+    featureNames: ["AIR FREIGHT SERVICES", "SEA FREIGHT SERVICES", "PROJECT CARGO", "WAREHOUSE LOGISTICS"],
+    heroKicker: "Logistics Freight Services", heroTitle: <>AIR&nbsp;&nbsp; SEA<br />ROAD&nbsp;&nbsp; RAIL</>, heroMore: "Learn More",
+    viewServices: "View Services",
+    footer: { about: "We are a very successful multinational company.", contact: "Contact Us", phone: "Phone", email: "Email", useful: "Useful Links", news: "Newsletter", newsText: "Subscribe to our latest news and stay connected with us.", placeholder: "Enter email address", subscribe: "Subscribe", copyright: "All Rights Reserved" },
+  },
+  traditional: {
+    language: "繁體中文",
+    nav: ["關於我們", "服務", "物流資訊", "衍亞辦公室", "聯絡我們", "加入我們"],
+    login: "登錄", quote: "獲得報價",
+    serviceNames: ["海運", "空運", "報關", "倉庫服務", "陸路運輸", "跨邊境運輸"],
+    featureNames: ["空運服務", "海運服務", "項目貨物", "倉庫服務"],
+    heroKicker: "物流貨運服務", heroTitle: <>空運&nbsp;&nbsp; 海運<br />汽運&nbsp;&nbsp; 鐵運</>, heroMore: "瞭解更多",
+    viewServices: "查看服務",
+    footer: { about: "我們是一家非常成功的跨國公司。", contact: "聯繫我們", phone: "電話", email: "電子郵件", useful: "常用鏈接", news: "新聞", newsText: "訂閱最新消息，並與我們保持聯繫。", placeholder: "輸入電郵地址", subscribe: "訂閱", copyright: "版權所有" },
+  },
+  simplified: {
+    language: "简体中文",
+    nav: ["关于我们", "服务", "物流资讯", "衍亚办公室", "联系我们", "加入我们"],
+    login: "登录", quote: "获得报价",
+    serviceNames: ["海运", "空运", "报关服务", "仓库服务", "陆路运输", "跨边境运输"],
+    featureNames: ["空运服务", "海运服务", "项目货物", "仓库服务"],
+    heroKicker: "物流货运服务", heroTitle: <>海运&nbsp;&nbsp; 空运<br />汽运&nbsp;&nbsp; 铁运</>, heroMore: "了解更多",
+    viewServices: "查看服务",
+    footer: { about: "我们是一家非常成功的跨国公司。", contact: "联系我们", phone: "电话", email: "电子邮件", useful: "常用链接", news: "订阅消息", newsText: "订阅最新消息，并与我们保持联系。", placeholder: "输入电邮地址", subscribe: "订阅", copyright: "版权所有" },
+  },
+} as const;
+
+function localizedServices(language: Language) {
+  return copy[language].serviceNames.map((title, index) => ({
+    title,
+    desc: title,
+    icon: `/assets/service-${serviceIcons[index]}.png`,
+  }));
+}
+
+const services = localizedServices("traditional");
+
+export function Header({ language = "traditional" }: { language?: Language }) {
+  const c = copy[language];
+  const items = localizedServices(language);
   return (
     <header className="legacy-header">
       <Link className="legacy-logo" href="/" aria-label="Ananta International Logistics">
@@ -20,57 +60,55 @@ export function Header() {
         <div className="legacy-top-row">
           <span className="top-spacer" />
           <details className="language-menu">
-            <summary>◉&nbsp; 繁体中文</summary>
+            <summary>◉&nbsp; {c.language}</summary>
             <div><a href="/en">English</a><Link href="/">繁體中文</Link><a href="/zh-cn">简体中文</a></div>
           </details>
           <span className="top-divider">|</span>
-          <a href="/login">登錄</a>
+          <a href="/login">{c.login}</a>
         </div>
         <div className="legacy-menu-row">
           <nav className="legacy-menu" aria-label="Main navigation">
-            <a href="/about">關於我們</a>
-            <details><summary>服務 <span>⌄</span></summary><div className="menu-dropdown">{services.map((item) => <a href="/services" key={item.title}>{item.title}</a>)}</div></details>
-            <details><summary>物流資訊 <span>⌄</span></summary><div className="menu-dropdown"><a href="/incoterms">Incoterms</a><a href="/container-size">Container size</a></div></details>
-            <a href="/office">衍亞辦公室</a>
-            <a href="/contact">聯絡我們</a>
-            <a href="/career">加入我們</a>
+            <a href="/about">{c.nav[0]}</a>
+            <details><summary>{c.nav[1]} <span>⌄</span></summary><div className="menu-dropdown">{items.map((item) => <a href="/services" key={item.title}>{item.title}</a>)}</div></details>
+            <details><summary>{c.nav[2]} <span>⌄</span></summary><div className="menu-dropdown"><a href="/incoterms">Incoterms</a><a href="/container-size">Container size</a></div></details>
+            <a href="/office">{c.nav[3]}</a>
+            <a href="/contact">{c.nav[4]}</a>
+            <a href="/career">{c.nav[5]}</a>
           </nav>
-          <a className="quote-link" href="/quote">獲得報價</a>
+          <a className="quote-link" href="/quote">{c.quote}</a>
         </div>
       </div>
     </header>
   );
 }
 
-export function Footer() {
+export function Footer({ language = "traditional" }: { language?: Language }) {
+  const c = copy[language];
   return (
     <footer className="legacy-footer">
       <div className="legacy-container footer-grid">
-        <div className="footer-about"><img src="/assets/logo.jpg" alt="Ananta International Logistics" /><p>我们是一家非常成功的跨国公司。</p></div>
-        <div><h4>聯繫我們</h4><p>Unit C31, 5/F., International Commodity Exchange Building, Baoan North Road, Luohu District, Shenzhen, China</p><p>電話: <a href="tel:+8675582204810">+86-755-82204810</a></p><p>電子郵件: <a href="mailto:marketing@anantalog.com">marketing@anantalog.com</a></p></div>
-        <div><h4>常用鏈接</h4><ul><li><a href="/about">關於我們</a></li><li><a href="/services">服務</a></li><li><a href="/office">衍亞辦公室</a></li><li><a href="/contact">聯絡我們</a></li></ul></div>
-        <div><h4>新聞</h4><p>訂閱最新消息，提供並與我們聯系。</p><input aria-label="輸入電郵地址" placeholder="輸入電郵地址" /><button type="button">訂閱</button></div>
+        <div className="footer-about"><img src="/assets/logo.jpg" alt="Ananta International Logistics" /><p>{c.footer.about}</p></div>
+        <div><h4>{c.footer.contact}</h4><p>Unit C31, 5/F., International Commodity Exchange Building, Baoan North Road, Luohu District, Shenzhen, China</p><p>{c.footer.phone}: <a href="tel:+8675582204810">+86-755-82204810</a></p><p>{c.footer.email}: <a href="mailto:marketing@anantalog.com">marketing@anantalog.com</a></p></div>
+        <div><h4>{c.footer.useful}</h4><ul><li><a href="/about">{c.nav[0]}</a></li><li><a href="/services">{c.nav[1]}</a></li><li><a href="/office">{c.nav[3]}</a></li><li><a href="/contact">{c.nav[4]}</a></li></ul></div>
+        <div><h4>{c.footer.news}</h4><p>{c.footer.newsText}</p><input aria-label={c.footer.placeholder} placeholder={c.footer.placeholder} /><button type="button">{c.footer.subscribe}</button></div>
       </div>
-      <div className="footer-bottom"><div className="legacy-container">© 2020. Anantalog.com 版權所有　<a href="https://beian.miit.gov.cn/">沪ICP备2020028392号-1</a></div></div>
+      <div className="footer-bottom"><div className="legacy-container">© 2020. Anantalog.com {c.footer.copyright}　<a href="https://beian.miit.gov.cn/">沪ICP备2020028392号-1</a></div></div>
     </footer>
   );
 }
 
-export function HomePage({ language = "traditional" }: { language?: "traditional" | "simplified" | "english" }) {
-  const hero = language === "english"
-    ? { kicker: "Logistics Freight Services", title: <>AIR&nbsp;&nbsp; SEA<br />ROAD&nbsp;&nbsp; RAIL</>, more: "Learn More" }
-    : language === "simplified"
-      ? { kicker: "物流货运服务", title: <>空运&nbsp;&nbsp; 海运<br />汽运&nbsp;&nbsp; 铁运</>, more: "了解更多" }
-      : { kicker: "物流貨運服務", title: <>空運&nbsp;&nbsp; 海運<br />汽運&nbsp;&nbsp; 鐵運</>, more: "瞭解更多" };
+export function HomePage({ language = "traditional" }: { language?: Language }) {
+  const c = copy[language];
+  const items = localizedServices(language);
   return (
     <>
-      <Header />
+      <Header language={language} />
       <main>
         <section className="legacy-hero">
-          <div className="legacy-container hero-content"><p>{hero.kicker}</p><h1>{hero.title}</h1><a href="/services">{hero.more}</a></div>
+          <div className="legacy-container hero-content"><p>{c.heroKicker}</p><h1>{c.heroTitle}</h1><a href="/services">{c.heroMore}</a></div>
         </section>
         <section className="feature-wrap"><div className="feature-bar">
-          {[{ glyph: "✈", label: "空運服務" }, { glyph: "▰", label: "海運服務" }, { glyph: "▣", label: "項目貨物" }, { glyph: "▤", label: "倉庫服務" }].map((item) => <div className="feature-item" key={item.label}><span>{item.glyph}</span><h4>{item.label}</h4></div>)}
+          {c.featureNames.map((label, index) => <div className="feature-item" key={label}><span>{["✈", "▰", "▣", "▤"][index]}</span><h4>{label}</h4></div>)}
         </div></section>
 
         <section className="legacy-about legacy-section">
@@ -81,7 +119,7 @@ export function HomePage({ language = "traditional" }: { language?: "traditional
         </section>
 
         <section className="services-home legacy-section">
-          <div className="legacy-container"><span className="orange-label">Our Services</span><h2>We work with you to achieve your goals</h2><div className="service-grid">{services.map((item) => <article className="service-card" key={item.title}><img src={item.icon} alt="" /><h4>{item.title}</h4><p>{item.desc}</p><a href="/services">查看服務　›</a></article>)}</div></div>
+          <div className="legacy-container"><span className="orange-label">Our Services</span><h2>We work with you to achieve your goals</h2><div className="service-grid">{items.map((item) => <article className="service-card" key={item.title}><img src={item.icon} alt="" /><h4>{item.title}</h4><p>{item.desc}</p><a href="/services">{c.viewServices}　›</a></article>)}</div></div>
         </section>
 
         <section className="how-section legacy-section"><div className="legacy-container how-grid"><div><span className="orange-label">HOW WE DO</span><h2>THE BEST</h2><a className="orange-button" href="/about">Our Approach</a></div><div className="how-list"><div><b>◎</b><span><h4>Goals</h4><p>Great financial advice starts with an understanding of your personal, financial and lifestyle goals.</p></span></div><div><b>▧</b><span><h4>Plans</h4><p>Goals without a plan are just a dream.</p></span></div><div><b>↻</b><span><h4>Actions</h4><p>Plans require action or they are just words.</p></span></div></div></div></section>
@@ -89,7 +127,7 @@ export function HomePage({ language = "traditional" }: { language?: "traditional
         <section className="stats-section"><div className="stats-overlay"/><div className="legacy-container stats-grid">{[["▣","1000+","COMPLETED PROJECTS"],["☺","1200+","HAPPY CLIENTS"],["⚑","120+","COUNTRIES"],["♡","450+","POSITIVE REVIEWS"]].map((item) => <div key={item[2]}><i>{item[0]}</i><strong>{item[1]}</strong><span>{item[2]}</span></div>)}</div></section>
         <section className="legacy-cta"><div className="legacy-container"><h2>Contact us for help.</h2><a href="/contact">Contact Us</a></div></section>
       </main>
-      <Footer />
+      <Footer language={language} />
     </>
   );
 }
