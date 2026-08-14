@@ -1,0 +1,602 @@
+
+
+.single-blog::before {
+    border-right: 2px solid #000000;
+    border-bottom: 2px solid #000000;
+}
+.single-blog::after {
+    border-top: 2px solid #000000;
+    border-left: 2px solid #000000;
+}
+.blog-txt .date span {
+    color: #000000;
+}
+.blog-txt .blog-title a:hover {
+    color: #000000;
+}
+a.readmore-btn {
+    background-color: #000000;
+}
+ul.breadcumb li a:hover {
+    color: #000000;
+}
+.main-menu li a:hover {
+    color: #000000;
+}
+.approach-icon-wrapper {
+    border: 1px solid #000000;
+}
+.case-carousel button.owl-next:hover {
+    border: 2px solid #000000 !important;
+}
+.case-carousel button.owl-next:hover i {
+    color: #000000;
+}
+.member-info small {
+    color: #000000;
+}
+.single-team-member::before {
+    border-top: 2px solid #000000;
+    border-left: 2px solid #000000;
+}
+.single-team-member::after {
+    border-bottom: 2px solid #000000;
+    border-right: 2px solid #000000;
+}
+.loader {
+    border: 4px solid #000000;
+}
+.loader-inner {
+    background-color: #000000;
+}
+.single-service::before {
+    border-right: 2px solid #000000;
+    border-bottom: 2px solid #000000;
+}
+.single-service::after {
+    border-top: 2px solid #000000;
+    border-left: 2px solid #000000;
+}
+.pagination-nav li.page-item.active a {
+    background-color: #000000;
+    border: 2px solid #000000;
+}
+.category-lists ul li a::after {
+    color: #000000;
+}
+.category-lists ul li a:hover {
+    color: #000000;
+}
+.subscribe-section span {
+    color: #000000;
+}
+.subscribe-section h3::after {
+    background-color: #000000;
+}
+.subscribe-form input[type="submit"], .subscribe-form button[type="submit"] {
+    background-color: #000000;
+    border: 1px solid #000000;
+}
+.subscribe-form input[type="submit"]:hover, .subscribe-form button[type="submit"]:hover {
+    border: 1px solid #000000;
+    color: #000000;
+}
+.project-ss-carousel .owl-next {
+    background-color: #000000;
+    border: 1px solid #000000;
+}
+.project-ss-carousel .owl-next:hover {
+    color: #000000;
+}
+.project-ss-carousel .owl-prev {
+    background-color: #000000;
+    border: 1px solid #000000;
+}
+.project-ss-carousel .owl-prev:hover {
+    color: #000000;
+}
+.popular-post-txt h5 a:hover {
+    color: #000000;
+}
+.single-contact-info i {
+    color: #000000;
+}
+.support-bar-area ul.social-links li a:hover {
+    color: #000000;
+}
+.main-menu li.dropdown:hover a {
+    color: #000000;
+}
+.main-menu li.dropdown ul.dropdown-lists li a::before {
+    background-color: #000000;
+}
+.main-menu li.dropdown ul.dropdown-lists li.active a {
+    background-color: #000000;
+}
+.main-menu li.dropdown.active::after {
+    color: #000000;
+}
+.single-category .text a.readmore {
+    color: #000000;
+}
+.category-lists ul li.active a {
+    color: #000000;
+}
+.case-types ul li a {
+    border: 1px solid #000000;
+}
+.case-types ul li a:hover {
+    background-color: #000000;
+}
+.case-types ul li.active a {
+    background-color: #000000;
+}
+.main-menu li.dropdown:hover::after {
+    color: #000000;
+}
+.faq-section .accordion .card .card-header .btn:hover {
+    background-color: #000000;
+}
+.faq-section .accordion .card .card-header .btn[aria-expanded="true"] {
+    background-color: #000000;
+}
+.blog-details-quote {
+    border-left: 3px solid #000000;
+}
+.comment-lists h3::after {
+    background-color: #000000;
+}
+.reply-form-section h3::after {
+    background-color: #000000;
+}
+.error-txt a {
+    background-color: #000000;
+    border: 1px solid #000000;
+}
+
+.error-txt a:hover {
+    color: #000000;
+}
+
+.mega-dropdown .dropbtn::before {
+    background-color: #000000;
+}
+
+.mega-dropdown .dropbtn::after {
+    background-color: #000000;
+}
+
+.mega-dropdown-content .service-category a::before {
+    color: #000000;
+}
+
+.mega-dropdown-content .service-category h3 {
+    color: #000000;
+}
+
+.testimonial-carousel.owl-theme .owl-dots .owl-dot.active span {
+    background: #000000;
+}
+.owl-carousel.common-carousel .owl-nav button.owl-next, .owl-carousel.common-carousel .owl-nav button.owl-prev {
+    background: #000000;
+    border: 1px solid #000000;
+}
+
+.owl-carousel.common-carousel .owl-nav button.owl-next:hover, .owl-carousel.common-carousel .owl-nav button.owl-prev:hover {
+    color: #000000;
+}
+
+.mega-dropdown .service-category a.active {
+    color: #000000;
+}
+
+.mega-dropdown .dropbtn.active {
+    color: #000000;
+}
+
+.case-types ul li a {
+    color: #000000;
+}
+
+.mega-dropdown:hover a.dropbtn {
+    color: #000000;
+}
+
+.mega-dropdown .dropbtn::before {
+    background-color: #000000;
+}
+
+.mega-dropdown .dropbtn::after {
+    background-color: #000000;
+}
+
+.single-pic h4::after {
+    background-color: #000000;
+}
+
+.video-play-button:before {
+    background: #000000;
+}
+
+.video-play-button:after {
+    background: #000000;
+}
+
+.project-ss-carousel.owl-theme .owl-dots .owl-dot.active span {
+    background: #000000;
+}
+
+.pagination-nav li.page-item.active a, .pagination-nav li.page-item.active span {
+    background-color: #000000;
+    border: 2px solid #000000;
+}
+
+.statistics-section h5 i {
+    color: #000000;
+}
+
+.hero2-carousel.owl-theme .owl-dots .owl-dot.active span {
+    background-color: #000000;
+}
+
+button.cookie-consent__agree {
+    background-color: #000000;
+}
+
+button.mfp-close:hover {
+    background-color: #000000;
+}
+
+.single-pricing-table:hover a.pricing-btn {
+    background-color: #000000;
+}
+
+.single-pricing-table a.pricing-btn:hover {
+    background-color: #fff;
+    color: #000000;
+}
+
+.single-pricing-table:hover {
+    background-color: #000000;
+    border: 2px solid #000000;
+}
+
+.single-pricing-table .price {
+    color: #000000;
+}
+
+.package-order {
+  background-color: #000000;
+  border-color: #000000;
+}
+
+ul.language-dropdown li a::before {
+    background: #000000;
+}
+
+a.language-btn:hover {
+    color: #000000;
+}
+.single-job a.title {
+    color: #000000;
+}
+
+.single-job strong i {
+    color: #000000;
+}
+.job-details h3 {
+    color: #000000;
+}
+.service-txt .service-title a:hover {
+    color: #000000;
+}
+.fc-button-primary {
+    background-color: #000000;
+    border-color: #000000;
+}
+.fc-button-primary:hover {
+    background-color: #000000;
+    border-color: #000000;
+}
+.fc-button-primary:not(:disabled).fc-button-active, .fc-button-primary:not(:disabled):active {
+    background-color: #000000;
+    border-color: #000000;
+}
+button.mfp-close:hover {
+    background-color: transparent;
+}
+
+@media only screen and (max-width : 991px) {
+    li.submenus ul {
+        background: transparent;
+    }
+    .mean-container a.meanmenu-reveal {
+        color: #000000;
+    }
+}
+@media only screen and (max-width: 575px) {
+  .case-types ul li a {
+      background-color: #fff;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.header_v1 .hainer_main_content .logo {
+    background: #fff;
+}
+.logistics_btn {
+    background: #000000;
+}
+.blog_slide .slick-prev:before, .blog_slide .slick-next:before, .team_slide .slick-prev:before, .team_slide .slick-next:before, .project_slide .slick-prev:before, .project_slide .slick-next:before, .pricing_slide .slick-prev:before, .pricing_slide .slick-next:before, .service_slide .slick-prev:before, .service_slide .slick-next:before, .hero_slide_v1 .slick-prev:before, .hero_slide_v1 .slick-next:before {
+    background: #000000;
+}
+.feature_v1 .grid_item:hover {
+    background: #000000;
+}
+.feature_v1 .active_item {
+    background: #000000;
+}
+.play_box .play_btn {
+    background: #000000;
+}
+.section_title span {
+    color: #000000;
+}
+.section_title span {
+    color: #000000;
+}
+.service_v1 .service_slide .grid_item:hover {
+    background: #000000;
+}
+.we_do_v1 .logistics_icon_box .icon_list .icon i {
+    color: #000000;
+}
+.logistics_fun_v1 .counter_box .icon i {
+    color: #000000;
+}
+.main-menu ul li:hover > a {
+    color: #000000;
+}
+.main-menu ul li ul.mega-menu li.mega-item:hover > a, .main-menu ul li ul.mega-menu li.mega-item ul li:hover > a {
+    color: #000000;
+}
+.main-menu ul li ul.mega-menu li.mega-item ul li a:hover {
+    color: #000000;
+}
+.main-menu ul li > ul.sub-menu {
+    background: #000000;
+}
+li.submenus ul {
+    background: #000000;
+}
+.testimonial_slide .slick-dots li.slick-active button {
+    background: #0000004a;
+}
+.project_slide .grid_item .grid_inner_item .logistics_img .overlay_img {
+    background: #000000;
+}
+.pricing_v1 .pricing_box:hover {
+    border-color: #000000;
+}
+.team_v1 .grid_item .grid_inner_item .logistics_img .overlay_content {
+    background: #000000;
+}
+.blog_v1 .grid_item .grid_inner_item .logistics_content h3.post_title a:hover {
+    color: #000000;
+}
+.blog_v1 .grid_item .grid_inner_item .logistics_content .btn_link:hover, .blog_v1 .grid_item .grid_inner_item .logistics_content .btn_link:focus {
+    color: #000000;
+}
+.main_bg {
+    background: #000000;
+}
+input[type="submit"], button[type="submit"] {
+    background-color: #000000;
+    border: 1px solid #000000;
+}
+.footer_v1 .widget_box .widget_link li:hover a {
+    color: #000000;
+}
+.footer_v1 .footer_bottom .social_box ul li a:hover, .footer_v1 .footer_bottom .social_box ul li a:focus {
+    background: #000000;
+}
+form#footerSubscribeForm button.logistics_btn:hover {
+    color: #000000;
+}
+#scroll_up:hover, #scroll_up:focus {
+    background: #000000;
+}
+.service-section .service_v1 .service_slide .grid_item:hover {
+    background: #000000;
+}
+a.boxed-btn {
+    background-color: #000000;
+}
+input[type="submit"]:hover, button[type="submit"]:hover {
+    color: #000000;
+}
+
+
+
+.header_v1 .header_navigation {
+    background: #000000;
+}
+.feature_v1 .grid_item {
+    background: #000000;
+}
+.dark_bg {
+    background: #000000;
+}
+.service-section .service_v1 .service_slide .grid_item {
+    background: #000000;
+}
+.subscribe-section {
+    background-color: #000000;
+}
+
+
+
+
+
+
+
+.product-area .shop-search i {
+    color: #000000;
+}
+.product-area .shop-sidebar .shop-box .sidebar-title .title::before {
+    background: #000000;
+}
+.product-area .shop-sidebar .shop-box .sidebar-title .title::after {
+    background: #000000;
+}
+.product-area .shop-tag .tag-item ul li a:hover {
+    background: #000000;
+}
+.product-area .shop-tag .tag-item ul li.active-search a {
+    background: #000000;
+}
+.ui-slider-horizontal .ui-slider-range {
+    background: #000000;
+}
+.ui-state-default, .ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default {
+    border: 1px solid #000000;
+    background: #000000;
+}
+button.filter-button {
+    background-color: #000000;
+}
+.product-area .shop-item .shop-thumb::before {
+    background-color: #0000008a;
+}
+li.active-search a {
+    color: #000000 !important;
+}
+.product-area .shop-item .shop-thumb ul li a {
+    color: #000000;
+}
+.product-area .shop-item .shop-content span {
+    color: #000000;
+}
+.product-area .shop-item .shop-content a:hover {
+    color: #000000;
+}
+.product-details-area .product-item-slide .slick-arrow {
+    background: #000000;
+}
+.actions .main-btn {
+    background: #000000;
+}
+.product-details-area .product-details-content .product-details-tags ul li {
+    color: #000000;
+}
+.shop-tab-area .nav .nav-item .nav-link.active {
+    color: #000000;
+}
+.shop-review-area .shop-review-form .input-box ul li a {
+    color: #000000;
+}
+.shop-review-area .shop-review-form .input-btn button {
+    background: #000000;
+    border-color: #000000;
+}
+.shop-review-area .shop-review-form .input-btn button:hover {
+    color: #000000;
+}
+.product-items .shop-item .shop-thumb::before {
+    background-color: #0000008a;
+}
+.product-items .shop-item .shop-thumb ul li a {
+    color: #000000;
+}
+.product-items .shop-item .shop-content span {
+    color: #000000;
+}
+.shop-tab-area .nav .nav-item .nav-link::before {
+    background: #000000;
+}
+.product-details-area .product-details-slide-item .slick-arrow {
+    background: #000000;
+}
+.cart-area .cart-table tbody .available-info .icon {
+    background: #000000;
+}
+.cart-middle .update-cart button {
+    border: 1px solid #000000;
+    background: #000000;
+}
+.cart-middle .update-cart button:hover {
+    color: #000000;
+}
+a.proceed-checkout-btn {
+    border: 1px solid #000000;
+    color: #000000;
+}
+a.proceed-checkout-btn:hover {
+    background-color: #000000;
+}
+.cart-area .cart-table tbody tr td .remove span:hover {
+    color: #000000;
+}
+.login-area .login-content .input-btn button {
+    background: #000000;
+    border-color: #000000;
+}
+.login-area .login-content .input-btn button:hover {
+    color: #000000;
+}
+.login-area .login-content .input-btn a {
+    color: #000000;
+}
+.user-sidebar .links li a.active {
+    color: #000000;
+}
+.user-sidebar .links li:hover>a {
+    color: #000000;
+}
+.main-table .dataTables_wrapper td a.btn {
+    border: 1px solid #000000;
+}
+.main-table .dataTables_wrapper td a.btn:hover {
+    background: #000000;
+}
+.paginate_button.active .page-link {
+    background-color: #000000 !important;
+}
+.progress-steps li.active .icon {
+    background: #000000;
+}
+.order-info-area .prinit .btn {
+    background: #000000;
+}
+.file-upload-area .upload-file span {
+    background: #000000;
+}
+.actions .checkout-btn {
+    border: 1px solid #000000;
+}
+
+.actions .checkout-btn:hover {
+    background: #000000;
+}
+
+.product-items .shop-item .shop-content a:hover {
+    color: #000000;
+}
+.product-details-area .product-details-content .product-social-icon ul li a:hover {
+    color: #000000;
+}

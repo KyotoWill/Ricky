@@ -1,2 +1,2 @@
-import { IncotermsPage } from "@/components/site-page";
-export default function Page() { return <IncotermsPage />; }
+import { OriginalPage } from "@/components/original-home";
+export default function Page() { return <OriginalPage locale="zh-hk" page="incoterms" />; }

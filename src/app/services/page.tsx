@@ -1,2 +1,2 @@
-import { ServicesPage } from "@/components/site-page";
-export default function Page() { return <ServicesPage />; }
+import { OriginalPage } from "@/components/original-home";
+export default function Page() { return <OriginalPage locale="zh-hk" page="services" />; }

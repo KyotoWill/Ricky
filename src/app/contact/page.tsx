@@ -1,2 +1,2 @@
-import { ContactPage } from "@/components/site-page";
-export default function Page() { return <ContactPage />; }
+import { OriginalPage } from "@/components/original-home";
+export default function Page() { return <OriginalPage locale="zh-hk" page="contact" />; }

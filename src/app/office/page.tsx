@@ -1,2 +1,2 @@
-import { OfficePage } from "@/components/site-page";
-export default function Page() { return <OfficePage />; }
+import { OriginalPage } from "@/components/original-home";
+export default function Page() { return <OriginalPage locale="zh-hk" page="office" />; }

@@ -1,2 +1,2 @@
-import { LoginPage } from "@/components/site-page";
-export default function Page() { return <LoginPage />; }
+import { OriginalHome } from "@/components/original-home";
+export default function Page() { return <OriginalHome locale="zh-hk" />; }
